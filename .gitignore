@@ -1,0 +1,5 @@
+@"
+bin/
+obj/
+*.dtproj.user
+"@ | Out-File -Encoding utf8 .gitignore
