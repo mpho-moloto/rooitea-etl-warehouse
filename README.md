@@ -17,18 +17,6 @@ Lookup-based surrogate key resolution with explicit error handling for unmatched
 
 Fully idempotent design allowing the solution to be re-run any number of times without producing duplicate or inconsistent data
 
-Architecture
-Farming DB --------+
-Distribution DB ---+---> LoadDimensions.dtsx ---> RooiTeaDW (dimension tables)
-Sales DB ----------+                                    |
-ExchangeRates.csv -+                                    v
-                                                 LoadFacts.dtsx
-                                             (DimBatch + 3 fact tables)
-                                                      |
-                                                      v
-                                          RooiTeaDW (complete star schema)
-
-
 MasterPackage.dtsx serves as the entry point. It contains no transformation logic of its own. Its sole purpose is to execute LoadDimensions.dtsx and, only upon successful completion, execute LoadFacts.dtsx. This ordering is enforced because fact tables contain foreign keys referencing dimension surrogate keys. A fact row cannot be inserted before the dimension row it references exists.
 
 Dimensional Model
