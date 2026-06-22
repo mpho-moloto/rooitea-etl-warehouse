@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RooiTeaDW"
+  DTS:DTSID="{6A3D955C-28BF-4B31-9A36-4087C3B1C608}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=MATEBOOK\SQLEXPRESS;Initial Catalog=RooiTeaDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{6A3D955C-28BF-4B31-9A36-4087C3B1C608}MATEBOOK\SQLEXPRESS.RooiTeaDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
